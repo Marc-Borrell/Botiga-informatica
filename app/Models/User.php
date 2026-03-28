@@ -29,4 +29,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected $primaryKey = 'id';
+    protected $fillable = [
+        'name', 'role', 'email', 'password'
+    ];
+
 }

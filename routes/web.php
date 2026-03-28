@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorPrincipal;
+use App\Http\Controllers\ControladorUsuaris;
+
+Route::resource('cursos', ControladorPrincipal::class);
+Route::resource('usuaris', ControladorUsuaris::class);
 
 Route::get('/', function () {
     return view('inici');
