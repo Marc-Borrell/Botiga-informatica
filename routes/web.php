@@ -12,14 +12,17 @@ Route::get('/', function () {
     return view('inici');
 });
 
-/*Route::get('/info',function () {
+Route::get('/info',function () {
 return view('info');
-});*/
+});
 
 Route::get('/dashboard-basic', function () {
 return view('dashboard-basic');
 })-> name('dashboard-basic');
 
+Route::get('/login-error', function () {
+    return view('login-error');
+})->name('errorbd');
 //Route::get('cursos/index_basic', [ControladorPrincipal::class, 'index_basic'])->name('cursos.index_basic');
 //Route::get('cursos/show_basic/{id}', [ControladorPrincipal::class, 'show_basic'])->name('cursos.show_basic');
 

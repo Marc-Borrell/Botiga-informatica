@@ -6,6 +6,14 @@
 <title>Cursos Informatica</title>
 </head>
 <body>
+    <header style="text-align:center; padding:20px; background-color:#f9f9f9; border
+    bottom:1px solid #ddd;">
+    <a href="{{ url('/') }}">
+    <x-application-logo style="width:150px; display:block; margin:0 
+    auto;"/>
+    </a>
+    </header>
+    <h1>CyberMatica</h1>
 <p>Pàgina inicial de l'aplicació web CyberMatica</p>
 @if (Route::has('login'))
 @auth
@@ -14,5 +22,6 @@
 <a href="{{ route('login') }}">Log in</a><br>
 @endauth
 @endif
+<a href="{{ url('/info') }}">Informació de l'aplicació</a><br>
 </body>
 </html>
