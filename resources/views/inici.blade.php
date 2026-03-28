@@ -3,21 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Botiga informàtica</title> 
+<title>Cursos Informatica</title>
 </head>
 <body>
-    <header style="text-align:center; padding:20px; background-color:#f9f9f9; border
-    bottom:1px solid #ddd;">
-    <x-application-logo style="width:150px; display:block; margin:0 auto;" />
-    </header>
-<p>Pàgina inicial de l'aplicació web informatica</p>
-<a href="{{ url('/info') }}">Info</a><br>
-@if (Route::has('login')){{-- Si la ruta 'login' està registrada --}}
-@auth {{-- Si usuari autenticat correctament --}}
+<p>Pàgina inicial de l'aplicació web CyberMatica</p>
+@if (Route::has('login'))
+@auth
 <a href="{{ url('/dashboard') }}">Dashboard</a>
 @else
 <a href="{{ route('login') }}">Log in</a><br>
-@endauth 
-@endif 
+@endauth
+@endif
 </body>
 </html>

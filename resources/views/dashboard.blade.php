@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Dashboard Gestor') }}
         </h2>
     </x-slot>
 
@@ -13,6 +13,9 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <a href="{{ url('cursos/create') }}">Cursos informatica: crea un nou curs</a>
+                    <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{ route('register') }}">Crea un nou usuari</a><br>
+                    </div>
                 </div>
             </div>
         </div>

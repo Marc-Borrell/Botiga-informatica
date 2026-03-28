@@ -100,4 +100,16 @@ class ControladorPrincipal extends Controller
         $treballador = Principal::findOrFail($index)->delete();
         return view('dashboard');
     }
+
+    public function index_basic()
+    {
+    $dades_curs = Principal::all();
+    return view('llista-basica', compact('dades_curs'));
+    }
+
+    public function show_basic($index)
+    {
+    $dades_cursos = Principal::findOrFail($index);
+    return view('mostra-basica', compact('dades_cursos'));
+    }
 }
