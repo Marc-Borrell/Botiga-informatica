@@ -23,4 +23,5 @@
  </tbody>
  </table>
 <div>
+<a href="{{ url('/dashboard') }}">Dashboard</a>
 @endsection

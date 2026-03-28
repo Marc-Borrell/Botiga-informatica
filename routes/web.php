@@ -5,20 +5,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControladorPrincipal;
 use App\Http\Controllers\ControladorUsuaris;
 
-Route::resource('cursos', ControladorPrincipal::class);
+//Route::resource('cursos', ControladorPrincipal::class);
 Route::resource('usuaris', ControladorUsuaris::class);
 
 Route::get('/', function () {
     return view('inici');
 });
 
-Route::get('/info',function () {
+/*Route::get('/info',function () {
 return view('info');
+});*/
+
+Route::group(['middleware' => 'auth'], function(){
+        Route::get('/dashboard', function () {
+        return view('dashboard');
+        })->name('dashboard');
+        Route::resource('cursos', ControladorPrincipal::class);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

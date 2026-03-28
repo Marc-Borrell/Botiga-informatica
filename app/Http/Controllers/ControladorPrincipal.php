@@ -13,7 +13,8 @@ class ControladorPrincipal extends Controller
     public function index()
     {
         $dades_cursos = Principal::all();
-        return view('llista', compact('dades_cursos'));
+        //return view('llista', compact('dades_cursos'));
+        return view('llistaB', compact('dades_cursos'));
         // Recollirà totes les entrades de la taula treballadors i les desarà dins d'una
         //variable de nom $dades_treballadors
         //Cridara a la vista llista.blade.php que es trobarà a resouces/views per mostrar
@@ -26,7 +27,7 @@ class ControladorPrincipal extends Controller
      */
     public function create()
     {
-        //
+        return view('crea');
     }
 
     /**
@@ -34,38 +35,69 @@ class ControladorPrincipal extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nouCurs = $request->validate([
+                'nomCurs' => 'required',
+                'tema' => 'required',
+                'descripcio' => 'required',
+                'durada_hores' => 'required',
+                'nivell' => 'required',
+                'preu' => 'required',
+                'data_inici' => 'required',
+                'actiu' => 'required',
+                'modalitat' => 'required',
+                'places_maximes' => 'required',
+                ]);
+        $curs = Principal::create($nouCurs);
+        return view('dashboard');
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $index)
     {
-        //
+        $dades_curs = Principal::findOrFail($index);
+        return view('mostra',compact('dades_curs'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $index)
     {
-        //
+        $dades_cursos = Principal::findOrFail($index);
+        return view('actualitza',compact('dades_cursos'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $index)
     {
-        //
+        $noves_dades_curs = $request->validate([
+        'nomCurs' => 'required',
+        'tema' => 'required',
+        'descripcio' => 'required',
+        'durada_hores' => 'required',
+        'nivell' => 'required',
+        'preu' => 'required',
+        'data_inici' => 'required',
+        'actiu' => 'required',
+        'modalitat' => 'required',
+        'places_maximes' => 'required',
+        ]);
+        Principal::findOrFail($index)->update($noves_dades_curs);
+        return view('dashboard');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $index)
     {
-        //
+        $treballador = Principal::findOrFail($index)->delete();
+        return view('dashboard');
     }
 }
