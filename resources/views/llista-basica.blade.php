@@ -12,14 +12,13 @@
 </tr>
 </thead>
 <tbody>
-@foreach($dades_curs as $treb)
+@foreach($dades_cursos as $treb)
 <tr>
 <td>{{$treb->index}}</td>
 <td>{{$treb->nomCurs}}</td>
 <td>{{$treb->tema}}</td>
 <td class="text-left">
-<a href="{{ route('cursos.show_basic', $treb->index)}}"
-class="btn btn-info btn-sm">Mostra</a>
+<a href="{{ route('cursos.show', $treb->index)}}" class="btn btn-info btn-sm">Mostra</a>
 </td>
 </tr>
 @endforeach

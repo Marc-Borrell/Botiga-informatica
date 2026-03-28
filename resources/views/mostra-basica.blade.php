@@ -30,6 +30,26 @@
 <td>Durada hores</td>
 <td>{{$dades_cursos->durada_hores}}</td>
 </tr>
+<tr>
+			<td>Preu</td>
+			<td>{{$dades_cursos->preu}}</td>
+		</tr>
+		<tr>
+			<td>Data inici</td>
+			<td>{{$dades_cursos->data_inici}}</td>
+		</tr>
+		<tr>
+			<td>Actiu</td>
+			<td>{{$dades_cursos->actiu == "1" ? 'Sí':'No'}}</td>
+		</tr>
+		<tr>
+			<td>Modalitat</td>
+			<td>{{$dades_cursos->modalitat}}</td>
+		</tr>
+		<tr>
+			<td>Places maximes</td>
+			<td>{{$dades_cursos->places_maximes}}</td>
+		</tr>
 </tbody>
 </table>
 <div class="p-6 bg-white border-b border-gray-200">

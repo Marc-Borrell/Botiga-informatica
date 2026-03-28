@@ -14,12 +14,12 @@ class ControladorPrincipal extends Controller
     {
         $dades_cursos = Principal::all();
         //return view('llista', compact('dades_cursos'));
-        return view('llistaB', compact('dades_cursos'));
-        // Recollirà totes les entrades de la taula treballadors i les desarà dins d'una
-        //variable de nom $dades_treballadors
-        //Cridara a la vista llista.blade.php que es trobarà a resouces/views per mostrar
-        //les dades dels treballadors
-        //The compact() function creates an array from variables and their values.
+        //return view('llistaB', compact('dades_cursos'));    
+        if (Auth()->user()->role == "gestor"){
+        return view('llistaB', compact('dades_cursos')); 
+        } else{
+        return view('llista-basica', compact('dades_cursos'));
+        }
     }
 
     /**
@@ -57,8 +57,12 @@ class ControladorPrincipal extends Controller
      */
     public function show(string $index)
     {
-        $dades_curs = Principal::findOrFail($index);
-        return view('mostra',compact('dades_curs'));
+        $dades_cursos = Principal::findOrFail($index);
+        if (auth()->user()->role == "gestor"){
+        return view('mostra',compact('dades_cursos')); 
+        } else{
+        return view('mostra-basica', compact('dades_cursos'));
+        } 
 
     }
 
@@ -101,15 +105,15 @@ class ControladorPrincipal extends Controller
         return view('dashboard');
     }
 
-    public function index_basic()
+    /*public function index_basic()
     {
     $dades_curs = Principal::all();
     return view('llista-basica', compact('dades_curs'));
-    }
+    } */
 
-    public function show_basic($index)
+    /*public function show_basic($index)
     {
     $dades_cursos = Principal::findOrFail($index);
     return view('mostra-basica', compact('dades_cursos'));
-    }
+    }*/
 }
