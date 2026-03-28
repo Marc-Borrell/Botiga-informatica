@@ -27,10 +27,6 @@
 			<td>{{$dades_curs->descripcio}}</td>
 		</tr>
 		<tr>
-			<td>Data de naixement</td>
-			<td>{{$dades_curs->data_naixement}}</td>
-		</tr>
-		<tr>
 			<td>Durada</td>
 			<td>{{$dades_curs->durada_hores}}</td>
 		</tr>
