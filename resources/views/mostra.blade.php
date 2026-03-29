@@ -12,48 +12,49 @@
 	<tbody>
 		<tr>
 			<td>index</td>
-			<td>{{$dades_curs->index}}</td>
+			<td>{{$dades_cursos->index}}</td>
 		</tr>
 		<tr>
 			<td>Curs</td>
-			<td>{{$dades_curs->nomCurs}}</td>
+			<td>{{$dades_cursos->nomCurs}}</td>
 		</tr>
 		<tr>
 			<td>Tema</td>
-			<td>{{$dades_curs->tema}}</td>
+			<td>{{$dades_cursos->tema}}</td>
 		</tr>
 		<tr>
 			<td>Descripcio</td>
-			<td>{{$dades_curs->descripcio}}</td>
+			<td>{{$dades_cursos->descripcio}}</td>
 		</tr>
 		<tr>
 			<td>Durada</td>
-			<td>{{$dades_curs->durada_hores}}</td>
+			<td>{{$dades_cursos->durada_hores}}</td>
 		</tr>
 		<tr>
 			<td>Nivell</td>
-			<td>{{$dades_curs->nivell}}</td>
+			<td>{{$dades_cursos->nivell}}</td>
 		</tr>
 		<tr>
 			<td>Preu</td>
-			<td>{{$dades_curs->preu}}</td>
+			<td>{{$dades_cursos->preu}}</td>
 		</tr>
 		<tr>
 			<td>Data inici</td>
-			<td>{{$dades_curs->data_inici}}</td>
+			<td>{{$dades_cursos->data_inici}}</td>
 		</tr>
 		<tr>
 			<td>Actiu</td>
-			<td>{{$dades_curs->actiu == "1" ? 'Sí':'No'}}</td>
+			<td>{{$dades_cursos->actiu == "1" ? 'Sí':'No'}}</td>
 		</tr>
 		<tr>
 			<td>Modalitat</td>
-			<td>{{$dades_curs->modalitat}}</td>
+			<td>{{$dades_cursos->modalitat}}</td>
 		</tr>
 		<tr>
 			<td>Places maximes</td>
-			<td>{{$dades_curs->places_maximes}}</td>
+			<td>{{$dades_cursos->places_maximes}}</td>
 		</tr>
+		
 	</tbody>	
   </table>
   <div class="p-6 bg-white border-b border-gray-200">

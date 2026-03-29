@@ -16,5 +16,6 @@ Comprova que:
 <li>El port del servidor és correcte</li>
 </ol>
 </p>
+<a href="{{ route('login') }}">Torna a l'inici de sessió</a>
 </body>
 </html>

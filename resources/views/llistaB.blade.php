@@ -27,6 +27,7 @@
               </button>
             </form>
             <a href="{{ route('cursos.show', $treb->index)}}" class="btn btn-info btn-sm">Mostra</a>  
+            <a href="{{ route('cursos.pdf', $treb->index) }}" class="btn btn-warning btn-sm">Descarregar PDF</a><br>
           </td>            
         </tr>
         @endforeach

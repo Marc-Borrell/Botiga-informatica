@@ -27,6 +27,10 @@ class ControladorPrincipal extends Controller
      */
     public function create()
     {
+        if (auth()->user()->role != 'gestor') {
+        auth()->logout();
+        return redirect()->route('login');
+    }
         return view('crea');
     }
 
@@ -35,6 +39,10 @@ class ControladorPrincipal extends Controller
      */
     public function store(Request $request)
     {
+        if (auth()->user()->role != 'gestor') {
+        auth()->logout();
+        return redirect()->route('login');
+    }
         $nouCurs = $request->validate([
                 'nomCurs' => 'required',
                 'tema' => 'required',
@@ -71,6 +79,10 @@ class ControladorPrincipal extends Controller
      */
     public function edit(string $index)
     {
+        if (auth()->user()->role != 'gestor') {
+        auth()->logout();
+        return redirect()->route('login');
+    }
         $dades_cursos = Principal::findOrFail($index);
         return view('actualitza',compact('dades_cursos'));
     }
@@ -80,6 +92,10 @@ class ControladorPrincipal extends Controller
      */
     public function update(Request $request, string $index)
     {
+        if (auth()->user()->role != 'gestor') {
+        auth()->logout();
+        return redirect()->route('login');
+    }
         $noves_dades_curs = $request->validate([
         'nomCurs' => 'required',
         'tema' => 'required',
@@ -101,6 +117,10 @@ class ControladorPrincipal extends Controller
      */
     public function destroy(string $index)
     {
+        if (auth()->user()->role != 'gestor') {
+        auth()->logout();
+        return redirect()->route('login');
+    }
         $treballador = Principal::findOrFail($index)->delete();
         return view('dashboard');
     }

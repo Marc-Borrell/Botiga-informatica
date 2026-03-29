@@ -11,11 +11,15 @@
             <a href="{{ url('cursos') }}">Cursos informatica: visualitza, actualitza i esborra registres</a>
             </div>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+                <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{ url('cursos/create') }}">Cursos informatica: crea un nou curs</a>
-                    <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ route('register') }}">Crea un nou usuari</a><br>
                     </div>
+                    <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{ route('register') }}">Usuaris: Crea i registra't amb un nou usuari</a><br>
+                    </div>
+                </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <a href="{{ route('usuaris.index') }}">Usuaris: visualitza, crea, edita i esborra</a>
                 </div>
             </div>
         </div>
